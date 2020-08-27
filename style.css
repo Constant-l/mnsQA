@@ -2,6 +2,7 @@
 body{
   background-color: pink;
   background-image: linear-gradient(to bottom right, 	#87CEEB	,#ADD8E6	,#00BFFF);
+  overflow-x: hidden;
 }
 /*头部导航栏*/
 #head{
@@ -39,6 +40,9 @@ body{
   cursor: not-allowed;
 }
 /*跳转顶部和底部的按钮*/
+#ttb{
+  padding:0;
+}
 #quickbtn{
   position:fixed;
 }
