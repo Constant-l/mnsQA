@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css">
     <!--CSS样式-->
     <link rel="stylesheet" href="style.css">
+    <link rel="shoutcut icon" type="image/x-icon" href="logo.jpg"/>
     <title>Quick Access</title>
   </head>
   <body>
@@ -54,11 +55,9 @@
                   <li class="nav-item">
                     <a class="nav-link" href="#life">生活区</a>
                   </li>
-
                 </ul>
             </div>
           </div>
-
           <div class="col-8">
             <!--正文内容-->
             <div class="container">
@@ -85,12 +84,11 @@
                   <a href="https://www.monash.edu/students/study-resources/study-spaces" target="_blank" type="button"><button class="btn btn-info"data-toggle="popover" data-trigger="hover"data-placement="bottom" data-content="学习区域位置及开放时间查询。">学习区域</button></a>
                   <a href="https://www.monash.edu/esolutions/software/catalogue" target="_blank" type="button"><button class="btn btn-success"data-toggle="popover" data-trigger="hover"data-placement="bottom" data-content="学校提供的免费下载安装或在线使用需要付费的软件如Microsoft office，matlab等。">软件下载</button></a>
                   <a href="https://www.monash.edu/accommodation/home" target="_blank" type="button"><button class="btn btn-info"data-toggle="popover" data-trigger="hover"data-placement="bottom" data-content="可申请学校宿舍，并且有详细的价格和种类说明。">学校宿舍</button></a>
-
                 </div>
                 <div class="card-footer">注意：校园区内的链接在国内使用时加载缓慢，有需要的可挂VPN后浏览。</div><hr>
                 <div class="card-header"id="tool"><h4><strong>工具链接</strong></h4></div>
                 <div class="card-body">
-                  <h5><strong>写作工具</strong></h5>
+                  <h5 id="t1"><strong>写作工具</strong></h5>
                   <hr>
                   <a href="http://fanyi.youdao.com/" target="_blank" type="button"><button class="btn btn-success"data-toggle="popover" data-trigger="hover"data-placement="bottom" data-content="翻译，需要时推荐点进有道词典更为精确。">有道翻译</button></a>
                   <a href="https://translate.google.cn/" target="_blank" type="button"><button class="btn btn-success"data-toggle="popover" data-trigger="hover"data-placement="bottom" data-content="国内可用的谷歌翻译。">谷歌翻译（CN）</button></a>
@@ -104,7 +102,6 @@
                   <a href="https://z-lib.org/" target="_blank" type="button"><button class="btn btn-success"data-toggle="popover" data-trigger="hover"data-placement="bottom" data-content="庞大的电子书店，可查询书记或文章，常用于搜索文献。">*Z-library</button></a>
                   <button class="btn btn-secondary"data-toggle="popover" data-trigger="hover"data-placement="bottom" data-content="上述所有链接均可在线使用但这些工具的能力有限，如需更好的写作辅助软件如stylewriter whitesmoke等需要下载软件。其次付费版的网址准确性也会更高如Scrivener，Grammarly付费
                     版等如有需要可自行搜索使用。">更多</button>
-
                   <hr>
                   <h5><strong>理科工具</strong></h5>
                   <hr>
@@ -115,15 +112,13 @@
                   <hr>
                   <a href="https://www.allhistory.com/" target="_blank" type="button"><button class="btn btn-success"data-toggle="popover" data-trigger="hover"data-placement="bottom" data-content="含盖世界历史并以时间顺序排列，并且有关系导图可查看事件，人物的关联和成就等。">全历史</button></a>
                   <a href="https://www.ageeye.cn/" target="_blank" type="button"><button class="btn btn-success"data-toggle="popover" data-trigger="hover"data-placement="bottom" data-content="这里收藏了中国各朝各代的地图以及一些著名事迹的发展路线。">发现中国</button></a>
-
                   <hr>
-                  <h5><strong>设计工具</strong></h5>
+                  <h5 id="t2"><strong>设计工具</strong></h5>
                   <hr>
                   <a href="https://www.doyoudo.com/" target="_blank" type="button"><button class="btn btn-success"data-toggle="popover" data-trigger="hover"data-placement="bottom" data-content="拥有许多关于设计类的资源库以及教程，包含免费和付费板块。">Doyoudo</button></a>
                   <a href="https://www.gaoding.com/" target="_blank" type="button"><button class="btn btn-success"data-toggle="popover" data-trigger="hover"data-placement="bottom" data-content="拥有海量精美模板与资源，部分资源需要付费或VIP，同时提供免费的在线photoshop和一件抠图功能。">稿定设计</button></a>
                   <a href="https://www.hellofont.cn/home" target="_blank" type="button"><button class="btn btn-success"data-toggle="popover" data-trigger="hover"data-placement="bottom" data-content="拥有两千多款高品质字体，部分可免费商用。大多数功能需要下载客户端，在线使用效率较低。">字由</button></a>
                   <a href="https://pixabay.com/" target="_blank" type="button"><button class="btn btn-success"data-toggle="popover" data-trigger="hover"data-placement="bottom" data-content="拥有许多免费且可上映的高清图片资源库。">Pixabay</button></a>
-
                   <hr>
                   <h5><strong>编程工具</strong></h5>
                   <hr>
@@ -134,7 +129,6 @@
                   <a href="https://stackoverflow.com/" target="_blank" type="button"><button class="btn btn-success"data-toggle="popover" data-trigger="hover"data-placement="bottom" data-content="IT问答网站，任何IT类的问题都能在这里搜索到答案，也可以发出提问等待着大佬上门解答。">stackoverflow</button></a>
                   <a href="https://www.nowcoder.com/" target="_blank" type="button"><button class="btn btn-success"data-toggle="popover" data-trigger="hover"data-placement="bottom" data-content="收集了许多大厂的真题和编程训练，同时也有许多有用的教程，也可以在这里求职从而找到实习或就业机会。">牛客网</button></a>
                   <a href="https://leetcode-cn.com/" target="_blank" type="button"><button class="btn btn-success"data-toggle="popover" data-trigger="hover"data-placement="bottom" data-content="涵盖了许多算法测试题和面试真题，也可以找到许多相关教程。">leetcode力扣</button></a>
-
                   <hr>
                   <h5><strong>综合工具</strong></h5>
                   <hr>
@@ -143,7 +137,6 @@
                   <a href="https://www.processon.com/" target="_blank" type="button"><button class="btn btn-success"data-toggle="popover" data-trigger="hover"data-placement="bottom" data-content="免费在线创作思维导图，流程图，并可进行背景透明保存。">ProcessOn在线绘图</button></a>
                   <a href="https://www.yxgapp.com/" target="_blank" type="button"><button class="btn btn-success"data-toggle="popover" data-trigger="hover"data-placement="bottom" data-content="视频学习网站，保函ted talk，精品课，公开课等，拥有广泛的内容学习。">译学馆</button></a>
                   <a href="https://www.tooleyes.com/" target="_blank" type="button"><button class="btn btn-success"data-toggle="popover" data-trigger="hover"data-placement="bottom" data-content="超多工具可在线使用，如图片，视频，gif编辑，文件格式转换，公式计算，文件压缩，邮箱生成，编码工具等。">tooleyes在线工具大全</button></a>
-
                   <div class="card-footer">注意：所有工具类网址均是以免费为前提寻找并经过筛选后觉得相对好用的。</div>
                   <hr>
                   <div class="card-header"id="life"><h4><strong>生活链接</strong></h4></div>
@@ -155,24 +148,19 @@
                   <h5><strong>休闲娱乐</strong></h5>
                   <a href="https://www.hi2future.com/" target="_blank" type="button"><button class="btn btn-info"data-toggle="popover" data-trigger="hover"data-placement="bottom" data-content="可写一封邮件在未来发送给自己或朋友，生日或纪念日同样可用，收到来自过去的邮件颇有纪念意义。">时光邮局</button></a>
                   <a href="https://www.sq688.com/" target="_blank" type="button"><button class="btn btn-info"data-toggle="popover" data-trigger="hover"data-placement="bottom" data-content="拥有海量无损音乐免费下载。">超高无损音乐</button></a>
-
                   <hr>
                 </div>
               </div>
             </div>
-
         </div>
           <!--跳转顶部和底部的按钮-->
           <div class="col-2">
           <a class="fa fa-chevron-circle-up"href="#head"id="quickbtn">跳到顶部</a>
           <br><br>
           <a class="fa fa-chevron-circle-down"href="#bottom"id="quickbtn">跳到底部</a>
-
           </div>
-
       </div>
     </div>
-
         <div id="des" class="container tab-pane fade"><br>
           <h4>不知道怎么用？点就完事儿了！下面按钮用于展示各种颜色对应的意义。但是具体用什么颜色主要还是看我的心情。（下列按钮仅做展示用，无任何功能。）</h4>
           <button class="btn btn-info"><a class="fa fa-book"></a>信息类链接</button>
@@ -188,27 +176,27 @@
           <p><a class="fa fa-wechat"></a> 844739905</p>
           <p><a class="fa fa-qq"></a> 844739905</p>
           <p></p>
-          <h4>该网址内容会定期更新，目前版本：V1.0.0（测试版）</h4><hr>
-          <h4>此版本仅用于测试和小范围内试用，先暂时不要分享哦。目前版本可能存在问题：加载缓慢，链接失效，兼容性差等。由于服务器在国外,国内加载网站时图片加载缓慢(背景以及公众号二维码),但不影响功能。</h4><hr>
-          <h4>今后功能将增加新网址链接，做站内流量统计和链接点击统计，并考虑增加反诈骗板块（公开诈骗者QQ/WX/电话等）现开始收集此类信息。</h4>
+          <h4>该网址内容会定期更新，目前版本：V1.0.1（测试版）</h4><hr>
+          <h4>2020/08/27更新内容：更换背景以加快加载速度，更改少量文本，增加LOGO,优化代码。</h4>
         </div>
         <div id="stra" class="container tab-pane fade"><br>
           <h4><strong>一句话攻略</strong></h4>
           <div class="card bg-secondary"id="yjhgl">
             *将学校邮箱绑定至电脑(windows可以mac不清楚哦)自带的邮件，即使没有翻墙也会不定期的自动同步邮件内的信息。<hr>
             *现澳洲对于学术作弊的学生将进行严惩，请勿找代写。同时，十个代写里有九个都是骗子。<hr>
-            *手机上装好Google Pay可以绑定myki卡，方便乘车和充值。（手机需要有NFC功能）
-
+            *手机上装好Google Pay可以绑定myki卡，方便乘车和充值。（手机需要有NFC功能）<hr>
+            *电脑里的东西尽量不要装C盘里，避免C盘占用过多影响速度。当电脑故障或重装时，C盘里的东西很容易丢。
           </div>
           <h4>更多攻略请扫码关注Monash攻略公众号,内有许多详细实用的攻略技巧~</h4>
           <img alt="Monash攻略微信公众号" src="gzh.jpg"><label class="fa fa-hand-o-left	"></label>
-
         </div>
         <div id="leg" class="container tab-pane fade"><br>
           <h3>此网站不以盈利为目的，仅用于给校友们提供便利，所有代码均在github上开源，可学习但不得用于商业用途，违者后果自负。</h3>
+          <hr>
+          <h3>本网站多数内容均来源于网络，如有任何侵权行为请告知，我们会第一时间修改、删除。</h3>
+          <br><br><br><br><br><br><br><br><br><br><br><br>
         </div>
       </div>
-
       <div id="bottom">
       </div>
       <script>
