@@ -1,6 +1,7 @@
 /*背景*/
 body{
-  background-image: url("headpic1.jpg");
+  background-color: pink;
+  background-image: linear-gradient(to bottom right, 	#87CEEB	,#ADD8E6	,#00BFFF);
 }
 /*头部导航栏*/
 #head{
@@ -33,7 +34,6 @@ body{
   margin-right: 2rem;
   margin-bottom: 2rem;
 }
-
 /*信息补充按钮*/
 .btn-secondary:hover{
   cursor: not-allowed;
@@ -52,4 +52,8 @@ body{
 }
 #yjhgl{
   color:white;
+}
+/*页底*/
+#bottom{
+  height:0;
 }
