@@ -1,0 +1,55 @@
+/*背景*/
+body{
+  background-image: url("headpic1.jpg");
+}
+/*头部导航栏*/
+#head{
+  height:7rem;
+}
+#head a:hover{
+  color:black;
+}
+#head h3{
+ color:black;
+ margin-top:5rem;
+ font-family: cursive;
+}
+#head h3:hover{
+ color:white;
+ font-family: cursive;
+ cursor: default;
+}
+/*左侧边栏*/
+.left{
+  height:25rem;
+  display: inline-block;
+  position: fixed;
+}
+.left a:hover{
+  color:white;
+}
+/*主页*/
+.card-body a{
+  margin-right: 2rem;
+  margin-bottom: 2rem;
+}
+
+/*信息补充按钮*/
+.btn-secondary:hover{
+  cursor: not-allowed;
+}
+/*跳转顶部和底部的按钮*/
+#quickbtn{
+  position:fixed;
+}
+#quickbtn:hover{
+  color:white;
+}
+/*攻略区*/
+#stra img{
+  height:10rem;
+  width:10rem;
+}
+#yjhgl{
+  color:white;
+}

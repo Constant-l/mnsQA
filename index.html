@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <!-- 新 Bootstrap4 核心 CSS 文件 -->
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+    <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+    <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+    <!-- bootstrap.bundle.min.js 用于弹窗、提示、下拉菜单，包含了 popper.min.js -->
+    <script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
+    <!-- 最新的 Bootstrap4 核心 JavaScript 文件 -->
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <!-- font-awesome-->
+    <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css">
+    <!--CSS样式-->
+    <link rel="stylesheet" href="style.css">
+    <title>Quick Access</title>
+  </head>
+  <body>
+    <!--头部导航栏-->
+    <div id="head">
+      <ul class="nav nav-tabs nav-justified fixed-top">
+        <li class="nav-item">
+          <a class="nav-link active" data-toggle="tab" href="#home">常用链接</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="tab" href="#des">使用简介</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="tab" href="#leg">版权须知</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="tab" href="#stra">实用攻略</a>
+        </li>
+      </ul>
+      <h3>MONASH QUICK ACCESS <a class= "fa fa-heart"></a></h3>
+    </div>
+    <!--导航栏分页内容-->
+    <div class="tab-content">
+      <!--主页，链接-->
+        <div id="home" class="tab-pane active">
+          <div class="row">
+            <div class="col-2">
+              <!--左侧边栏-->
+              <div class="left">
+                <ul class="nav flex-column">
+                  <li class="nav-item">
+                    <a class="nav-link" href="#uni">校园区</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#tool">工具区</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#life">生活区</a>
+                  </li>
+
+                </ul>
+            </div>
+          </div>
+
+          <div class="col-8">
+            <!--正文内容-->
+            <div class="container">
+              <div class="card">
+                <div class="card-header"id="uni"><h4><strong>校园链接</strong></h4></div>
+                <div class="card-body">
+                  <h5><strong>重要主页</strong></h5>
+                  <hr>
+                  <a href="https://my.monash.edu.au/" target="_blank"type="button"><button class="btn btn-danger"data-toggle="popover" data-trigger="hover"data-placement="bottom" data-content="Mymonash学生登入界面，可转入moodle, timetable, email, library等。">My Monash</button></a>
+                  <a href="https://monash.edu/" target="_blank"type="button"><button class="btn btn-info"data-toggle="popover" data-trigger="hover"data-placement="bottom" data-content="Monash官网，可查询任何关于学校的信息，能找到最新推送的公告活动等。">Monash官网</button></a>
+                  <a href="https://my.monash.edu.au/wes/" target="_blank"type="button"><button class="btn btn-info"data-toggle="popover" data-trigger="hover"data-placement="bottom" data-content="Web enrolment system,用于注册学科，交学费，提交个人信息，延期等。">WES</button></a>
+                  <a href="https://www3.monash.edu/pubs/2019handbooks/index.html" target="_blank"type="button"><button class="btn btn-info"data-toggle="popover" data-trigger="hover"data-placement="bottom" data-content="Handbook,用于查看各科目详细内容，教授联系方式，分数线，学习内容等。">Handbook</button></a>
+                  <a href="https://www3.monash.edu/pubs/2019handbooks/maps/" target="_blank"type="button"><button class="btn btn-info"data-toggle="popover" data-trigger="hover"data-placement="bottom" data-content="Course map，用于查看专业内所有需要学的科目，此course map链接可能不包含所有专业，需在handbook内寻找。">Course map</button></a>
+                  <a href="https://www.monash.edu/engineering/current-students/enrolment-and-re-enrolment/course-information/course-maps" target="_blank"type="button"><button class="btn btn-info"data-toggle="popover" data-trigger="hover"data-placement="bottom" data-content="工程专业的Course map">工程Course map</button></a>
+                  <a href="https://monashuni.okta.com/" target="_blank"type="button"><button class="btn btn-info"data-toggle="popover" data-trigger="hover"data-placement="bottom" data-content="Okta登入界面，可用于更改登入密码和更改okta绑定设备。">Okta登入</button></a>
+                  <a href="https://www.monash.edu/connect/contact-us" target="_blank"type="button"><button class="btn btn-info"data-toggle="popover" data-trigger="hover"data-placement="bottom" data-content="有任何关于学习，生活，校内的任何问题都可以在这里寻求帮助。">MonashConnect</button></a>
+                  <hr>
+                  <h5><strong>校内设施</strong></h5>
+                  <hr>
+                  <a href="https://www.monash.edu/esolutions/print/students" target="_blank" type="button"><button class="btn btn-success"data-toggle="popover" data-trigger="hover"data-placement="bottom" data-content="校内打印机使用，上传打印文件。">校内打印</button></a>
+                  <a href="https://www.monash.edu/esolutions/accounts-passwords/credit-your-account" target="_blank" type="button"><button class="btn btn-success"data-toggle="popover" data-trigger="hover"data-placement="bottom" data-content="学生卡充值，用于打印时扣费。">学生卡充值</button></a>
+                  <a href="https://www.monash.edu/esolutions/print/students-costs" target="_blank" type="button"><button class="btn btn-info"data-toggle="popover" data-trigger="hover"data-placement="bottom" data-content="用于浏览不同种类的打印价格。">打印价格</button></a>
+                  <a href="https://locate-a-lab.apps.monash.edu/" target="_blank" type="button"><button class="btn btn-success"data-toggle="popover" data-trigger="hover"data-placement="bottom" data-content="Computer lab的开放时间以及课后进入的权限申请。">计算机房</button></a>
+                  <a href="https://www.monash.edu/students/study-resources/study-spaces" target="_blank" type="button"><button class="btn btn-info"data-toggle="popover" data-trigger="hover"data-placement="bottom" data-content="学习区域位置及开放时间查询。">学习区域</button></a>
+                  <a href="https://www.monash.edu/esolutions/software/catalogue" target="_blank" type="button"><button class="btn btn-success"data-toggle="popover" data-trigger="hover"data-placement="bottom" data-content="学校提供的免费下载安装或在线使用需要付费的软件如Microsoft office，matlab等。">软件下载</button></a>
+                  <a href="https://www.monash.edu/accommodation/home" target="_blank" type="button"><button class="btn btn-info"data-toggle="popover" data-trigger="hover"data-placement="bottom" data-content="可申请学校宿舍，并且有详细的价格和种类说明。">学校宿舍</button></a>
+
+                </div>
+                <div class="card-footer">注意：校园区内的链接在国内使用时加载缓慢，有需要的可挂VPN后浏览。</div><hr>
+                <div class="card-header"id="tool"><h4><strong>工具链接</strong></h4></div>
+                <div class="card-body">
+                  <h5><strong>写作工具</strong></h5>
+                  <hr>
+                  <a href="http://fanyi.youdao.com/" target="_blank" type="button"><button class="btn btn-success"data-toggle="popover" data-trigger="hover"data-placement="bottom" data-content="翻译，需要时推荐点进有道词典更为精确。">有道翻译</button></a>
+                  <a href="https://translate.google.cn/" target="_blank" type="button"><button class="btn btn-success"data-toggle="popover" data-trigger="hover"data-placement="bottom" data-content="国内可用的谷歌翻译。">谷歌翻译（CN）</button></a>
+                  <a href="https://translate.google.com/" target="_blank" type="button"><button class="btn btn-success"data-toggle="popover" data-trigger="hover"data-placement="bottom" data-content="谷歌翻译,国内无法使用。">谷歌翻译</button></a>
+                  <a href="https://www.grammarly.com/grammar-check" target="_blank" type="button"><button class="btn btn-success"data-toggle="popover" data-trigger="hover"data-placement="bottom" data-content="用于检测拼写和语法等，可点击LOGO进入主页下载软件版，可在不同场合自动检查拼写和语法。">Grammarly</button></a>
+                  <a href="https://www.thesaurus.com/" target="_blank" type="button"><button class="btn btn-success"data-toggle="popover" data-trigger="hover"data-placement="bottom" data-content="用于替换同义词，并能检查文章语法。">*Thesaraus</button></a>
+                  <a href="https://www.wordandphrase.info/" target="_blank" type="button"><button class="btn btn-success"data-toggle="popover" data-trigger="hover"data-placement="bottom" data-content="可用来检测文章词汇和语句的学术性，也可查询单个单词在学术写作中使用的比例。">*wordandphrase</button></a>
+                  <a href="http://www.phrasebank.manchester.ac.uk/" target="_blank" type="button"><button class="btn btn-success"data-toggle="popover" data-trigger="hover"data-placement="bottom" data-content="提供各种专业短语及句型用于替换，并且有相关写作教学。">*Acdemic phrasebank</button></a>
+                  <a href="http://uefap.net/" target="_blank" type="button"><button class="btn btn-success"data-toggle="popover" data-trigger="hover"data-placement="bottom" data-content="很详细的专业写作教学，细分至各种文体，文章的各个部分，语法，修辞等。">*UEfAP</button></a>
+                  <a href="https://scholar.chongbuluo.com/" target="_blank" type="button"><button class="btn btn-success"data-toggle="popover" data-trigger="hover"data-placement="bottom" data-content="集合了各大常用的文献搜索网址，可用来搜索文献、参考等。">*虫部落学术搜索</button></a>
+                  <a href="https://z-lib.org/" target="_blank" type="button"><button class="btn btn-success"data-toggle="popover" data-trigger="hover"data-placement="bottom" data-content="庞大的电子书店，可查询书记或文章，常用于搜索文献。">*Z-library</button></a>
+                  <button class="btn btn-secondary"data-toggle="popover" data-trigger="hover"data-placement="bottom" data-content="上述所有链接均可在线使用但这些工具的能力有限，如需更好的写作辅助软件如stylewriter whitesmoke等需要下载软件。其次付费版的网址准确性也会更高如Scrivener，Grammarly付费
+                    版等如有需要可自行搜索使用。">更多</button>
+
+                  <hr>
+                  <h5><strong>理科工具</strong></h5>
+                  <hr>
+                  <a href="https://locate-a-lab.apps.monash.edu/" target="_blank" type="button"><button class="btn btn-success"data-toggle="popover" data-trigger="hover"data-placement="bottom" data-content="功能超强大的知识搜索引擎兼计算器，可以用来解决复杂的问题，涵盖但不仅限于数学，物理，化学，科学，工程，商科，文学
+                    ， 生活。">*Wolframalpha智能计算器</button></a>
+                  <hr>
+                  <h5><strong>历史工具</strong></h5>
+                  <hr>
+                  <a href="https://www.allhistory.com/" target="_blank" type="button"><button class="btn btn-success"data-toggle="popover" data-trigger="hover"data-placement="bottom" data-content="含盖世界历史并以时间顺序排列，并且有关系导图可查看事件，人物的关联和成就等。">全历史</button></a>
+                  <a href="https://www.ageeye.cn/" target="_blank" type="button"><button class="btn btn-success"data-toggle="popover" data-trigger="hover"data-placement="bottom" data-content="这里收藏了中国各朝各代的地图以及一些著名事迹的发展路线。">发现中国</button></a>
+
+                  <hr>
+                  <h5><strong>设计工具</strong></h5>
+                  <hr>
+                  <a href="https://www.doyoudo.com/" target="_blank" type="button"><button class="btn btn-success"data-toggle="popover" data-trigger="hover"data-placement="bottom" data-content="拥有许多关于设计类的资源库以及教程，包含免费和付费板块。">Doyoudo</button></a>
+                  <a href="https://www.gaoding.com/" target="_blank" type="button"><button class="btn btn-success"data-toggle="popover" data-trigger="hover"data-placement="bottom" data-content="拥有海量精美模板与资源，部分资源需要付费或VIP，同时提供免费的在线photoshop和一件抠图功能。">稿定设计</button></a>
+                  <a href="https://www.hellofont.cn/home" target="_blank" type="button"><button class="btn btn-success"data-toggle="popover" data-trigger="hover"data-placement="bottom" data-content="拥有两千多款高品质字体，部分可免费商用。大多数功能需要下载客户端，在线使用效率较低。">字由</button></a>
+                  <a href="https://pixabay.com/" target="_blank" type="button"><button class="btn btn-success"data-toggle="popover" data-trigger="hover"data-placement="bottom" data-content="拥有许多免费且可上映的高清图片资源库。">Pixabay</button></a>
+
+                  <hr>
+                  <h5><strong>编程工具</strong></h5>
+                  <hr>
+                  <a href="https://github.com/" target="_blank" type="button"><button class="btn btn-success"data-toggle="popover" data-trigger="hover"data-placement="bottom" data-content="世界最大的代码分享，项目开源平台，还可用于团队合作进行版本控制，搭建个人博客等。">Github</button></a>
+                  <a href="https://www.w3school.com.cn/index.html" target="_blank" type="button"><button class="btn btn-success"data-toggle="popover" data-trigger="hover"data-placement="bottom" data-content="全球最大的中文web技术教程，包含web技术以及一些主流编程语言的教程。">w3school</button></a>
+                  <a href="https://www.runoob.com/" target="_blank" type="button"><button class="btn btn-success"data-toggle="popover" data-trigger="hover"data-placement="bottom" data-content="提供许多编程语言的详细基础教程。">Runoob菜鸟教程</button></a>
+                  <a href="https://www.imooc.com/" target="_blank" type="button"><button class="btn btn-success"data-toggle="popover" data-trigger="hover"data-placement="bottom" data-content="互联网IT技术学习平台，拥有许多大学提供的专业课程，分付费和免费区。">IMOOC慕课网</button></a>
+                  <a href="https://stackoverflow.com/" target="_blank" type="button"><button class="btn btn-success"data-toggle="popover" data-trigger="hover"data-placement="bottom" data-content="IT问答网站，任何IT类的问题都能在这里搜索到答案，也可以发出提问等待着大佬上门解答。">stackoverflow</button></a>
+                  <a href="https://www.nowcoder.com/" target="_blank" type="button"><button class="btn btn-success"data-toggle="popover" data-trigger="hover"data-placement="bottom" data-content="收集了许多大厂的真题和编程训练，同时也有许多有用的教程，也可以在这里求职从而找到实习或就业机会。">牛客网</button></a>
+                  <a href="https://leetcode-cn.com/" target="_blank" type="button"><button class="btn btn-success"data-toggle="popover" data-trigger="hover"data-placement="bottom" data-content="涵盖了许多算法测试题和面试真题，也可以找到许多相关教程。">leetcode力扣</button></a>
+
+                  <hr>
+                  <h5><strong>综合工具</strong></h5>
+                  <hr>
+                  <a href="https://convertio.co/" target="_blank" type="button"><button class="btn btn-success"data-toggle="popover" data-trigger="hover"data-placement="bottom" data-content="超强大的在线格式转换工具，几乎涵盖所有类型格式。">Convertio</button></a>
+                  <a href="http://www.officeplus.cn/Template/Home.shtml" target="_blank" type="button"><button class="btn btn-success"data-toggle="popover" data-trigger="hover"data-placement="bottom" data-content="微软旗下的office模板大全，涵盖word,ppt,excel并提供相关教学课程。">Officeplus</button></a>
+                  <a href="https://www.processon.com/" target="_blank" type="button"><button class="btn btn-success"data-toggle="popover" data-trigger="hover"data-placement="bottom" data-content="免费在线创作思维导图，流程图，并可进行背景透明保存。">ProcessOn在线绘图</button></a>
+                  <a href="https://www.yxgapp.com/" target="_blank" type="button"><button class="btn btn-success"data-toggle="popover" data-trigger="hover"data-placement="bottom" data-content="视频学习网站，保函ted talk，精品课，公开课等，拥有广泛的内容学习。">译学馆</button></a>
+                  <a href="https://www.tooleyes.com/" target="_blank" type="button"><button class="btn btn-success"data-toggle="popover" data-trigger="hover"data-placement="bottom" data-content="超多工具可在线使用，如图片，视频，gif编辑，文件格式转换，公式计算，文件压缩，邮箱生成，编码工具等。">tooleyes在线工具大全</button></a>
+
+                  <div class="card-footer">注意：所有工具类网址均是以免费为前提寻找并经过筛选后觉得相对好用的。</div>
+                  <hr>
+                  <div class="card-header"id="life"><h4><strong>生活链接</strong></h4></div>
+                  <br>
+                  <h5><strong>租房信息</strong></h5>
+                  <hr>
+                  <a href="https://www.monash.edu/accommodation/accommodation/off-campus-options/private-rental" target="_blank" type="button"><button class="btn btn-info"data-toggle="popover" data-trigger="hover"data-placement="bottom" data-content="学校提供的可靠校外租房中介合集，可用于租校外的房子或公寓。">*学校认可的靠谱中介合集</button></a>
+                  <hr>
+                  <h5><strong>休闲娱乐</strong></h5>
+                  <a href="https://www.hi2future.com/" target="_blank" type="button"><button class="btn btn-info"data-toggle="popover" data-trigger="hover"data-placement="bottom" data-content="可写一封邮件在未来发送给自己或朋友，生日或纪念日同样可用，收到来自过去的邮件颇有纪念意义。">时光邮局</button></a>
+                  <a href="https://www.sq688.com/" target="_blank" type="button"><button class="btn btn-info"data-toggle="popover" data-trigger="hover"data-placement="bottom" data-content="拥有海量无损音乐免费下载。">超高无损音乐</button></a>
+
+                  <hr>
+                </div>
+              </div>
+            </div>
+
+        </div>
+          <!--跳转顶部和底部的按钮-->
+          <div class="col-2">
+          <a class="fa fa-chevron-circle-up"href="#head"id="quickbtn">跳到顶部</a>
+          <br><br>
+          <a class="fa fa-chevron-circle-down"href="#bottom"id="quickbtn">跳到底部</a>
+
+          </div>
+
+      </div>
+    </div>
+
+        <div id="des" class="container tab-pane fade"><br>
+          <h4>不知道怎么用？点就完事儿了！下面按钮用于展示各种颜色对应的意义。但是具体用什么颜色主要还是看我的心情。（下列按钮仅做展示用，无任何功能。）</h4>
+          <button class="btn btn-info"><a class="fa fa-book"></a>信息类链接</button>
+          <button class="btn btn-success"><a class="fa fa-cog"></a>工具类链接</button>
+          <button class="btn btn-danger"><a class="fa fa-warning"></a>重要类链接</button>
+          <button class="btn btn-secondary"><a class="fa fa-cloud"></a>信息补充链接</button>
+          <button class="btn btn-warning"><a class="fa fa-joker"></a>需要加以辨别的链接</button>
+          <hr>
+          <h4>带*的则表示这个链接服务器在国外，国内访问时速度缓慢。学校区链接默认集体带*</h4>
+          <button class="btn btn-info">*看我的前面带星号</button>
+          <hr>
+          <h4>如有失效链接或有实用链接推荐的请联系我，也欢迎大家提任何建议！</h4>
+          <p><a class="fa fa-wechat"></a> 844739905</p>
+          <p><a class="fa fa-qq"></a> 844739905</p>
+          <p></p>
+          <h4>该网址内容会定期更新，目前版本：V1.0.0（测试版）</h4><hr>
+          <h4>此版本仅用于测试和小范围内试用，先暂时不要分享哦。目前版本可能存在问题：加载缓慢，链接失效，兼容性差等。</h4><hr>
+          <h4>今后功能将增加新网址链接，做站内流量统计和链接点击统计，并考虑增加反诈骗板块（公开诈骗者QQ/WX/电话等）现开始收集此类信息。</h4>
+        </div>
+        <div id="stra" class="container tab-pane fade"><br>
+          <h4><strong>一句话攻略</strong></h4>
+          <div class="card bg-secondary"id="yjhgl">
+            *将学校邮箱绑定至电脑(windows可以mac不清楚哦)自带的邮件，即使没有翻墙也会不定期的自动同步邮件内的信息。<hr>
+            *现澳洲对于学术作弊的学生将进行严惩，请勿找代写。同时，十个代写里有九个都是骗子。<hr>
+            *手机上装好Google Pay可以绑定myki卡，方便乘车和充值。（手机需要有NFC功能）
+
+          </div>
+          <h4>更多攻略请扫码关注Monash攻略公众号,内有许多详细实用的攻略技巧~</h4>
+          <img alt="Monash攻略微信公众号" src="gzh.jpg"><label class="fa fa-hand-o-left	"></label>
+
+        </div>
+        <div id="leg" class="container tab-pane fade"><br>
+          <h3>此网站不以盈利为目的，仅用于给校友们提供便利，所有代码均在github上开源，可学习但不得用于商业用途，违者后果自负。</h3>
+        </div>
+      </div>
+
+      <div id="bottom">
+      </div>
+      <script>
+     $(document).ready(function(){
+         $('[data-toggle="popover"]').popover();
+     });
+   </script>
+  </body>
+</html>
