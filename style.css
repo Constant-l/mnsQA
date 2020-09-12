@@ -1,63 +1,29 @@
 /*背景*/
 body{
-  background-color: pink;
-  background-image: linear-gradient(to bottom right, 	#87CEEB	,#ADD8E6	,#00BFFF);
+  background-color:rgb(217, 240, 191);
   overflow-x: hidden;
 }
-/*头部导航栏*/
+.item {
+  margin-top: 10px;
+  margin-right: 40px;
+}
 #head{
-  height:7rem;
-}
-#head a:hover{
-  color:black;
-}
-#head h3{
- color:black;
- margin-top:5rem;
- font-family: cursive;
-}
-#head h3:hover{
- color:white;
- font-family: cursive;
- cursor: default;
+  background-color:rgb(255,250,232);
 }
 /*左侧边栏*/
-.left{
-  height:25rem;
-  display: inline-block;
-  position: fixed;
-}
-.left a:hover{
-  color:white;
+.el-menu-vertical-demo:not(.el-menu--collapse) {
+  width: 200px;
+  min-height: 400px;
 }
 /*主页*/
+.card-body{
+  background-color:rgb(255,250,232);
+}
 .card-body a{
   margin-right: 2rem;
   margin-bottom: 2rem;
 }
 /*信息补充按钮*/
-.btn-secondary:hover{
+.forbit-btn:hover{
   cursor: not-allowed;
-}
-/*跳转顶部和底部的按钮*/
-#ttb{
-  padding:0;
-}
-#quickbtn{
-  position:fixed;
-}
-#quickbtn:hover{
-  color:white;
-}
-/*攻略区*/
-#stra img{
-  height:10rem;
-  width:10rem;
-}
-#yjhgl{
-  color:white;
-}
-/*页底*/
-#bottom{
-  height:0;
 }
