@@ -22,6 +22,15 @@
     <!--CSS样式-->
     <link rel="stylesheet" href="style.css">
     <link rel="shoutcut icon" type="image/x-icon" href="logo.jpg"/>
+    <script>
+      var _hmt = _hmt || [];
+      (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?462c4e34e01d470b8544de37dc5b4e91";
+        var s = document.getElementsByTagName("script")[0]; 
+        s.parentNode.insertBefore(hm, s);
+      })();
+      </script>      
     <title>Quick Access</title>
   </head>
   <body>
@@ -77,9 +86,9 @@
                 <i class="el-icon-document"></i>
                 <span slot="title">使用说明</span>
               </el-menu-item>
-              <el-menu-item index="4" disabled>
+              <el-menu-item @click="drawer1 = true">
                 <i class="el-icon-setting"></i>
-                <span slot="title">敬请期待</span>
+                <span slot="title">版本更新</span>
               </el-menu-item>
             </el-menu>
          </div>
@@ -94,6 +103,26 @@
           <span style="margin-left:2rem">--键盘按键【B】对应百度</span><hr>
           <span style="margin-left:2rem">--键盘按键【F】对应翻译</span><hr>
           <span style="margin-left:2rem">--键盘按键【R】对应runoob</span><hr>
+          <span style="margin-left:2rem">--键盘按键【G】对应Github</span>
+        </el-drawer>
+        <el-drawer
+          title="版本更新"
+          :visible.sync="drawer1"
+          :with-header="true">
+          <el-timeline :reverse="reverse">
+            <el-timeline-item
+              v-for="(activity, index) in activities"
+              :key="index"
+              :timestamp="activity.timestamp">
+              {{activity.content}}
+            </el-timeline-item>
+          </el-timeline>
+          <span style="margin-left:2rem">最近一次更新内容：</span><hr>
+          <span style="margin-left:2rem">界面大幅度更新-背景采用护眼色</span><hr>
+          <span style="margin-left:2rem">新增按钮将有标识-侧导航样式修改</span><hr>
+          <span style="margin-left:2rem">更改跳转顶部按钮-新增随机顶部标语</span><hr>
+          <span style="margin-left:2rem">新增快捷键功能-见使用说明</span><hr>
+
         </el-drawer>
            <!--正文内容-->
            <div class="container">
@@ -211,6 +240,18 @@
            check2:false,
            isCollapse: true,
            drawer: false,
+           drawer1: false,
+           reverse: true,
+        activities: [{
+          content: 'QA测试版上线',
+          timestamp: '2020-08-27'
+        }, {
+          content: 'QA正式版上线',
+          timestamp: '2020-09-01'
+        }, {
+          content: 'QA正式2.0版上线',
+          timestamp: '2020-09-12'
+        }]
          },
       
          methods:{
@@ -267,7 +308,7 @@
     });
     let time = new Date();
     let mesnight = ["忙碌了一天，放松下吧。","今天的努力就是明天的底气。","任何值得而拥有的都是值得等待的。","拂尘晚归，得空闲坐。","今天离小目标又近了一步。","百草处黄消热暑，篱边瓜果缀枝头。","前路浩浩荡荡，万物皆可期待。","勤者读书夜达旦，青藤绕屋花连云。"];
-    let mesmor = ["又是元气满满的一天。","今天也要加油哦。","常应常静常清净矣。"];
+    let mesmor = ["又是元气满满的一天。","今天也要加油哦。","常应常静常清净矣。","听首音乐，读本好书。","小池残暑退，高树早凉归。","离离暑云散，习习凉风起。"];
     let output="";
     if(time.getHours()>=5 && time.getHours()<11){
       let index = Math.floor(Math.random()*mesmor.length);
