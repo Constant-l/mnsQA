@@ -114,7 +114,8 @@
             <el-timeline-item
               v-for="(activity, index) in activities"
               :key="index"
-              :timestamp="activity.timestamp">
+              :timestamp="activity.timestamp"
+              :color="activity.color">
               {{activity.content}}
             </el-timeline-item>
           </el-timeline>
@@ -160,6 +161,7 @@
                  <a href="http://fanyi.youdao.com/" target="_blank" type="button"><el-button type="success" plain data-toggle="popover" data-trigger="hover"data-placement="bottom" data-content="翻译，需要时推荐点进有道词典更为精确。">有道翻译</el-button></a>
                  <a href="https://translate.google.cn/" target="_blank" type="button"><el-button type="success" plain data-toggle="popover" data-trigger="hover"data-placement="bottom" data-content="国内可用的谷歌翻译。">谷歌翻译（CN）</el-button></a>
                  <a href="https://translate.google.com/" target="_blank" type="button"><el-button type="success" plain data-toggle="popover" data-trigger="hover"data-placement="bottom" data-content="谷歌翻译,国内无法使用。">谷歌翻译</el-button></a>
+                 <a href="https://www.deepl.com/home" target="_blank" type="button"><el-badge value="new" class="item"><el-button type="success" plain data-toggle="popover" data-trigger="hover"data-placement="bottom" data-content="可自主选择词汇的翻译神器，能直接翻译word文件并用专业写作的词语替换。">Deepl</el-button></el-badge></a>
                  <a href="https://www.grammarly.com/grammar-check" target="_blank" type="button"><el-button type="success" plain data-toggle="popover" data-trigger="hover"data-placement="bottom" data-content="用于检测拼写和语法等，可点击LOGO进入主页下载软件版，可在不同场合自动检查拼写和语法。">Grammarly</el-button></a>
                  <a href="https://www.thesaurus.com/" target="_blank" type="button"><el-button type="success" plain data-toggle="popover" data-trigger="hover"data-placement="bottom" data-content="用于替换同义词，并能检查文章语法。">*Thesaraus</el-button></a>
                  <a href="https://www.wordandphrase.info/" target="_blank" type="button"><el-button type="success" plain data-toggle="popover" data-trigger="hover"data-placement="bottom" data-content="可用来检测文章词汇和语句的学术性，也可查询单个单词在学术写作中使用的比例。">*wordandphrase</el-button></a>
@@ -252,7 +254,8 @@
           timestamp: '2020-09-01'
         }, {
           content: 'QA正式2.0版上线',
-          timestamp: '2020-09-12'
+          timestamp: '2020-09-12',
+          color: '#0bbd87'
         }]
          },
       
