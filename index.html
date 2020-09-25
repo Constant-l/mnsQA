@@ -31,7 +31,7 @@
     <title>Quick Access</title>
   </head>
   <body>
-    <div id = "all">
+    <div id = "all" v-cloak>
       <el-card shadow="hover" id="head">
       <br>
       <i :class= {'el-icon-sunny':check1,'el-icon-moon':check2} style="font-size: 30px; display: inline; margin:30px;"></i>
@@ -87,6 +87,10 @@
                 <i class="el-icon-setting"></i>
                 <span slot="title">版本更新</span>
               </el-menu-item>
+              <el-menu-item @click="drawer2 = true">
+                <i class="el-icon-lollipop"></i>
+                <span slot="title">支持一下</span>
+              </el-menu-item>
             </el-menu>
          </div>
          <div class="col-10">
@@ -117,10 +121,19 @@
             </el-timeline-item>
           </el-timeline>
           <span style="margin-left:2rem">最近一次更新内容：</span><hr>
-          <span style="margin-left:2rem">界面大幅度更新-背景采用护眼色</span><hr>
-          <span style="margin-left:2rem">新增按钮将有标识-侧导航样式修改</span><hr>
-          <span style="margin-left:2rem">更改跳转顶部按钮-新增随机顶部标语</span><hr>
-          <span style="margin-left:2rem">新增快捷键功能-见使用说明</span><hr>
+          <span style="margin-left:2rem">新增部分链接与hot标签</span><hr>
+          <span style="margin-left:2rem">理科工具分区移除，移至综合工具。</span><hr>
+          <span style="margin-left:2rem">左侧导航新增支持一下。</span><hr>
+          <span style="margin-left:2rem">头部标语内容增加。</span><hr>
+          <span style="margin-left:2rem">修复页面打开瞬间闪现bug。</span><hr>
+        </el-drawer>
+        <el-drawer
+          title="支持一下"
+          :visible.sync="drawer2"
+          :with-header="true">
+          <span style="margin-left:2rem">感谢您的支持</span><hr>
+          <span style="margin-left:2rem">欢迎关注微信公众号：Monash攻略</span><hr>
+          <span style="margin-left:2rem">内有许多实用信息和攻略哦</span><hr>
 
         </el-drawer>
            <!--正文内容-->
@@ -158,7 +171,7 @@
                  <a href="http://fanyi.youdao.com/" target="_blank" type="button"><el-button type="success" plain data-toggle="popover" data-trigger="hover"data-placement="bottom" data-content="翻译，需要时推荐点进有道词典更为精确。">有道翻译</el-button></a>
                  <a href="https://translate.google.cn/" target="_blank" type="button"><el-button type="success" plain data-toggle="popover" data-trigger="hover"data-placement="bottom" data-content="国内可用的谷歌翻译。">谷歌翻译（CN）</el-button></a>
                  <a href="https://translate.google.com/" target="_blank" type="button"><el-button type="success" plain data-toggle="popover" data-trigger="hover"data-placement="bottom" data-content="谷歌翻译,国内无法使用。">谷歌翻译</el-button></a>
-                 <a href="https://www.deepl.com/home" target="_blank" type="button"><el-badge value="new" class="item"><el-button type="success" plain data-toggle="popover" data-trigger="hover"data-placement="bottom" data-content="可自主选择词汇的翻译神器，能直接翻译word文件并用专业写作的词语替换。">Deepl</el-button></el-badge></a>
+                 <a href="https://www.deepl.com/home" target="_blank" type="button"><el-badge value="hot" class="item"><el-button type="success" plain data-toggle="popover" data-trigger="hover"data-placement="bottom" data-content="可自主选择词汇的翻译神器，能直接翻译word文件并用专业写作的词语替换。">Deepl</el-button></el-badge></a>
                  <a href="https://www.grammarly.com/grammar-check" target="_blank" type="button"><el-button type="success" plain data-toggle="popover" data-trigger="hover"data-placement="bottom" data-content="用于检测拼写和语法等，可点击LOGO进入主页下载软件版，可在不同场合自动检查拼写和语法。">Grammarly</el-button></a>
                  <a href="https://www.thesaurus.com/" target="_blank" type="button"><el-button type="success" plain data-toggle="popover" data-trigger="hover"data-placement="bottom" data-content="用于替换同义词，并能检查文章语法。">*Thesaraus</el-button></a>
                  <a href="https://www.wordandphrase.info/" target="_blank" type="button"><el-button type="success" plain data-toggle="popover" data-trigger="hover"data-placement="bottom" data-content="可用来检测文章词汇和语句的学术性，也可查询单个单词在学术写作中使用的比例。">*wordandphrase</el-button></a>
@@ -169,12 +182,6 @@
                  <el-button class="forbit-btn"type="info" plain data-toggle="popover" data-trigger="hover"data-placement="bottom" data-content="上述所有链接均可在线使用但这些工具的能力有限，如需更好的写作辅助软件如stylewriter whitesmoke等需要下载软件。其次付费版的网址准确性也会更高如Scrivener，Grammarly付费
                    版等如有需要可自行搜索使用。">更多</el-button>
                  <hr>
-                 <h5><strong>理科工具</strong></h5>
-                 <hr>
-                 <a href="https://locate-a-lab.apps.monash.edu/" target="_blank" type="button"><el-button type="success" plain data-toggle="popover" data-trigger="hover"data-placement="bottom" data-content="功能超强大的知识搜索引擎兼计算器，可以用来解决复杂的问题，涵盖但不仅限于数学，物理，化学，科学，工程，商科，文学
-                   ， 生活。">*Wolframalpha智能计算器</el-button></a>
-                 <hr>
-
                  <h5 id="t2"><strong>设计工具</strong></h5>
                  <hr>
                  <a href="https://www.gaoding.com/" target="_blank" type="button"><el-button type="success" plain data-toggle="popover" data-trigger="hover"data-placement="bottom" data-content="拥有海量精美模板与资源，部分资源需要付费或VIP，同时提供免费的在线photoshop和一件抠图功能。">稿定设计</el-button></a>
@@ -185,9 +192,12 @@
                  <a href="https://www.hellofont.cn/home" target="_blank" type="button"><el-button type="success" plain data-toggle="popover" data-trigger="hover"data-placement="bottom" data-content="拥有两千多款高品质字体，部分可免费商用。大多数功能需要下载客户端，在线使用效率较低。">字由</el-button></a>
                  <a href="https://pixabay.com/" target="_blank" type="button"><el-button type="success" plain data-toggle="popover" data-trigger="hover"data-placement="bottom" data-content="拥有许多免费且可上映的高清图片资源库。">*Pixabay</el-button></a>
                  
-                 <a href="https://www.iconfont.cn/" target="_blank" type="button"><el-badge value="new" class="item"><el-button type="success" plain data-toggle="popover" data-trigger="hover"data-placement="bottom" data-content="阿里巴巴矢量图标库，有许多免费的插画和图标资源，并且有SVG格式（矢量图标格式：更改图片尺寸不会影响图片效果。）">Iconfont</el-button></el-badge></a>
+                 <a href="https://www.iconfont.cn/" target="_blank" type="button"><el-button type="success" plain data-toggle="popover" data-trigger="hover"data-placement="bottom" data-content="阿里巴巴矢量图标库，有许多免费的插画和图标资源，并且有SVG格式（矢量图标格式：更改图片尺寸不会影响图片效果。）">Iconfont</el-button></a>
                  <a href="https://www.doyoudo.com/" target="_blank" type="button"><el-button type="success" plain data-toggle="popover" data-trigger="hover"data-placement="bottom" data-content="拥有许多关于设计类的资源库以及教程，包含免费和付费板块。">Doyoudo</el-button></a>
                  <a href="http://www.officeplus.cn/Template/Home.shtml" target="_blank" type="button"><el-button type="success" plain data-toggle="popover" data-trigger="hover"data-placement="bottom" data-content="微软旗下的office模板大全，涵盖word,ppt,excel并提供相关教学课程。">Officeplus</el-button></a>
+
+                 <a href="http://zihua.com.cn/" target="_blank" type="button"><el-badge value="new" class="item"><el-button type="success" plain data-toggle="popover" data-trigger="hover"data-placement="bottom" data-content="针对设计，艺术，影视等行业的教学，包括如何使用相关软件，学习相关理论和技巧等。">自化网</el-button></el-badge></a>
+
                  <el-button class="forbit-btn" type="info" plain data-toggle="popover" data-trigger="hover"data-placement="bottom" data-content="模板素材主要包括了PPT,Excel,Word等模板，同时也有很多可用于演讲，个人简历，海报，平面设计等，有需要的可自行浏览下载。">更多</el-button>
                  <hr>
                  <h5 id="bcgj"><strong>编程工具</strong></h5>
@@ -200,6 +210,7 @@
                  <a href="https://www.csdn.net/" target="_blank" type="button"><el-button type="success" plain data-toggle="popover" data-trigger="hover"data-placement="bottom" data-content="开发者社区、论坛。会有很多人在这里写一些心得和攻略，也可以找到一些问题的解决方案。但是内容较杂，准确率未知，需要辨别。">CSDN</el-button></a>
                  <a href="https://www.nowcoder.com/" target="_blank" type="button"><el-button type="success" plain data-toggle="popover" data-trigger="hover"data-placement="bottom" data-content="收集了许多大厂的真题和编程训练，同时也有许多有用的教程，也可以在这里求职从而找到实习或就业机会。">牛客网</el-button></a>
                  <a href="https://leetcode-cn.com/" target="_blank" type="button"><el-button type="success" plain data-toggle="popover" data-trigger="hover"data-placement="bottom" data-content="涵盖了许多算法测试题和面试真题，也可以找到许多相关教程。">leetcode力扣</el-button></a>
+                 <a href="http://www.frontendjs.com/" target="_blank" type="button"><el-badge value="new" class="item"><el-button type="success" plain data-toggle="popover" data-trigger="hover"data-placement="bottom" data-content="针对编程的超齐全导航网站，含有博客，社区，教程，工具，框架，库等。">前站导航</el-button></el-badge></a>
 
                  <hr>
                  <h5><strong>综合工具</strong></h5>
@@ -208,7 +219,12 @@
                  <a href="https://smallpdf.com/cn" target="_blank" type="button"><el-button type="success" plain data-toggle="popover" data-trigger="hover"data-placement="bottom" data-content="简洁实用的PDF格式转换器，也包括其它少许格式的转换。">Smallpdf</el-button></a>
                  <a href="https://www.yxgapp.com/" target="_blank" type="button"><el-button type="success" plain data-toggle="popover" data-trigger="hover"data-placement="bottom" data-content="视频学习网站，保函ted talk，精品课，公开课等，拥有广泛的内容学习。">译学馆</el-button></a>
                  <a href="https://www.tooleyes.com/" target="_blank" type="button"><el-button type="success" plain data-toggle="popover" data-trigger="hover"data-placement="bottom" data-content="超多工具可在线使用，如图片，视频，gif编辑，文件格式转换，公式计算，文件压缩，邮箱生成，编码工具等。">tooleyes在线工具大全</el-button></a>
-                 </div>
+                 <a href="https://locate-a-lab.apps.monash.edu/" target="_blank" type="button"><el-button type="success" plain data-toggle="popover" data-trigger="hover"data-placement="bottom" data-content="功能超强大的知识搜索引擎兼计算器，可以用来解决复杂的问题，涵盖但不仅限于数学，物理，化学，科学，工程，商科，文学
+                  ， 生活。">*Wolframalpha智能计算器</el-button></a>                 
+                 <a href="https://baimiao.uzero.cn/" target="_blank" type="button"><el-badge value="new" class="item"><el-button type="success" plain data-toggle="popover" data-trigger="hover"data-placement="bottom" data-content="免费的图片，pdf，excel文字识别，提取，可网页在线或下载使用。">白描</el-button></el-badge></a>
+                 <a href="https://alternativeto.net/" target="_blank" type="button"><el-badge value="new" class="item"><el-button type="success" plain data-toggle="popover" data-trigger="hover"data-placement="bottom" data-content="可找到常用付费软件的替代版，或类似功能的免费软件。">alternativeto</el-button></el-badge></a>
+                 
+                </div>
                  <div class="card-footer">注意：所有工具类网址均是以免费为前提寻找并经过筛选后觉得相对好用的。</div>
                  <hr>
                  <div class="card-header"id="life"><h4><strong>生活链接</strong></h4></div>
@@ -231,7 +247,6 @@
      </div>
    </div>
   </div>
-   </div>
        
      <script>
        let all = new Vue({
@@ -242,8 +257,9 @@
            isCollapse: true,
            drawer: false,
            drawer1: false,
+           drawer2: false,
            reverse: true,
-        activities: [{
+          activities: [{
           content: 'QA测试版上线',
           timestamp: '2020-08-27'
         }, {
@@ -315,8 +331,8 @@
         $('[data-toggle="popover"]').popover();
     });
     let time = new Date();
-    let mesnight = ["忙碌了一天，放松下吧。","今天的努力就是明天的底气。","任何值得而拥有的都是值得等待的。","拂尘晚归，得空闲坐。","今天离小目标又近了一步。","百草处黄消热暑，篱边瓜果缀枝头。","前路浩浩荡荡，万物皆可期待。","勤者读书夜达旦，青藤绕屋花连云。"];
-    let mesmor = ["又是元气满满的一天。","今天也要加油哦。","常应常静常清净矣。","听首音乐，读本好书。","小池残暑退，高树早凉归。","离离暑云散，习习凉风起。"];
+    let mesnight =                                                                                                                     ["久坐伤身，身下懒腰吧。","忙碌了一天，放松下吧。","今天的努力就是明天的底气。","任何值得而拥有的都是值得等待的。","拂尘晚归，得空闲坐。","今天离小目标又近了一步。","百草处黄消热暑，篱边瓜果缀枝头。","前路浩浩荡荡，万物皆可期待。","勤者读书夜达旦，青藤绕屋花连云。"];
+    let mesmor =                                                                                                                     ["人生最美的风景在前方","你认真的模样真好看","心有多大，世界就有多大","既然选择了远方，便只顾风雨兼程。","元气满满的一天开始啦。","又是元气满满的一天。","今天也要加油哦。","常应常静常清净矣。","听首音乐，读本好书。","小池残暑退，高树早凉归。","离离暑云散，习习凉风起。"];
     let output="";
     if(time.getHours()>=5 && time.getHours()<11){
       let index = Math.floor(Math.random()*mesmor.length);

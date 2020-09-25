@@ -13,7 +13,7 @@ body{
 /*左侧边栏*/
 .el-menu-vertical-demo:not(.el-menu--collapse) {
   width: 200px;
-  min-height: 400px;
+  min-height: 420px;
 }
 /*主页*/
 .card-body{
@@ -26,4 +26,7 @@ body{
 /*信息补充按钮*/
 .forbit-btn:hover{
   cursor: not-allowed;
+}
+[v-cloak]{
+  display:none;
 }
