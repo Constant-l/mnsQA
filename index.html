@@ -1,347 +1,127 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
+<!doctype html>
+<html lang="zh-CN">
   <head>
+    <!-- 必须的 meta 标签 -->
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
-    <!-- 开发环境版本，包含了有帮助的命令行警告 -->
-    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-    <!-- 引入样式 -->
-    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
-    <!-- 引入组件库 -->
-    <script src="https://unpkg.com/element-ui/lib/index.js"></script>
-    <!-- 新 Bootstrap4 核心 CSS 文件 -->
-    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
-    <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
-    <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
-    <!-- bootstrap.bundle.min.js 用于弹窗、提示、下拉菜单，包含了 popper.min.js -->
-    <script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
-    <!-- 最新的 Bootstrap4 核心 JavaScript 文件 -->
-    <script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <!--CSS样式-->
-    <link rel="stylesheet" href="style.css">
-    <script>
-      var _hmt = _hmt || [];
-      (function() {
-        var hm = document.createElement("script");
-        hm.src = "https://hm.baidu.com/hm.js?462c4e34e01d470b8544de37dc5b4e91";
-        var s = document.getElementsByTagName("script")[0]; 
-        s.parentNode.insertBefore(hm, s);
-      })();
-      </script>      
-    <title>Quick Access</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 新 Bootstrap5 核心 CSS 文件 -->
+<link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/5.1.1/css/bootstrap.min.css">
+ 
+<!--  popper.min.js 用于弹窗、提示、下拉菜单 -->
+<script src="https://cdn.staticfile.org/popper.js/2.9.3/umd/popper.min.js"></script>
+ 
+<!-- 最新的 Bootstrap5 核心 JavaScript 文件 -->
+<script src="https://cdn.staticfile.org/twitter-bootstrap/5.1.1/js/bootstrap.min.js"></script>
+<link rel="shortcut icon" href="http://t15.baidu.com/it/u=3903419869,1067676623&fm=224&app=112&f=PNG?w=500&h=322&s=B6449C46C91D00CE5D123C3903008050">
+    <title>王者荣耀修改器</title>
   </head>
   <body>
-    <div id = "all">
-      <el-card shadow="hover" id="head">
-      <br>
-      <i :class= {'el-icon-sunny':check1,'el-icon-moon':check2} style="font-size: 30px; display: inline; margin:30px;"></i>
-      <h3 id="mes" style="display: inline;"></h3>
-      </el-card>  
-    <br>
+    <nav class="navbar navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <img src="http://t15.baidu.com/it/u=3903419869,1067676623&fm=224&app=112&f=PNG?w=500&h=322&s=B6449C46C91D00CE5D123C3903008050" alt="" width="30" height="24" class="d-inline-block align-text-top">
+          王者荣耀修改器
+        </a>
+      </div>
+    </nav>
 
-       <div id="home" class="tab-pane active">
-        <el-backtop></el-backtop>
-         <div class="row">
-           <div class="col-2">
-             <!--左侧边栏-->
-             <el-radio-group v-model="isCollapse" style="margin-bottom: 20px;">
-              <el-radio-button :label="false">展开</el-radio-button>
-              <el-radio-button :label="true">收起</el-radio-button>
-            </el-radio-group>
-            <el-menu default-active="1-4-1" class="el-menu-vertical-demo" @open="handleOpen" @close="handleClose" :collapse="isCollapse">
-              <el-submenu index="1">
-                <template slot="title">
-                  <i class="el-icon-school"></i>
-                  <span slot="title">校园区</span>
-                </template>
-                <el-menu-item-group>
-                  <span slot="title">校园链接</span>
-                  <el-menu-item @click="zyzy">重要主页</el-menu-item>
-                  <!-- <el-menu-item index="1-2">校内设施</el-menu-item> -->
-                </el-menu-item-group>
-                <!-- <el-menu-item-group title="分组2">
-                  <el-menu-item index="1-3">选项3</el-menu-item>
-                </el-menu-item-group>
-                <el-submenu index="1-4">
-                  <span slot="title">选项4</span>
-                  <el-menu-item index="1-4-1">选项1</el-menu-item>
-                </el-submenu> -->
-              </el-submenu>
-              <el-submenu index="2">
-                <template slot="title">
-                <i class="el-icon-menu"></i>
-                <span slot="title">工具区</span>
-              </template>
-                <el-menu-item-group>
-                  <span slot="title">工具链接</span>
-                  <el-menu-item @click="xzgj">写作工具</el-menu-item>
-                  <!-- <el-menu-item index="1-2">设计工具</el-menu-item> -->
-                  <el-menu-item @click="bcgj">编程工具</el-menu-item>
-                </el-menu-item-group>
-              </el-submenu>
-              <el-menu-item @click="drawer = true">
-                <i class="el-icon-document"></i>
-                <span slot="title">使用说明</span>
-              </el-menu-item>
-              <el-menu-item @click="drawer1 = true">
-                <i class="el-icon-setting"></i>
-                <span slot="title">版本更新</span>
-              </el-menu-item>
-            </el-menu>
-         </div>
-         <div class="col-10">
-          <el-drawer
-          title="使用说明"
-          :visible.sync="drawer"
-          :with-header="true">
-          <span style="margin-left:2rem">点击所需链接可直接跳转</span><hr>
-          <span style="margin-left:2rem">鼠标悬浮在按钮上可获得简介</span><hr>
-          <span style="margin-left:2rem">快捷按键实现页面跳转</span><hr>
-          <span style="margin-left:2rem">--键盘按键【B】对应百度</span><hr>
-          <span style="margin-left:2rem">--键盘按键【F】对应翻译</span><hr>
-          <span style="margin-left:2rem">--键盘按键【R】对应runoob</span><hr>
-          <span style="margin-left:2rem">--键盘按键【G】对应Github</span><hr>
-          <span style="margin-left:2rem">--键盘按键【W】对应w3school</span>
-        </el-drawer>
-        <el-drawer
-          title="版本更新"
-          :visible.sync="drawer1"
-          :with-header="true">
-          <el-timeline :reverse="reverse">
-            <el-timeline-item
-              v-for="(activity, index) in activities"
-              :key="index"
-              :timestamp="activity.timestamp"
-              :color="activity.color">
-              {{activity.content}}
-            </el-timeline-item>
-          </el-timeline>
-          <span style="margin-left:2rem">最近一次更新内容：</span><hr>
-          <span style="margin-left:2rem">界面大幅度更新-背景采用护眼色</span><hr>
-          <span style="margin-left:2rem">新增按钮将有标识-侧导航样式修改</span><hr>
-          <span style="margin-left:2rem">更改跳转顶部按钮-新增随机顶部标语</span><hr>
-          <span style="margin-left:2rem">新增快捷键功能-见使用说明</span><hr>
-
-        </el-drawer>
-           <!--正文内容-->
-           <div class="container">
-             <div class="card">
-               <div class="card-header"id="uni"><h4><strong>校园链接</strong></h4></div>
-               <div class="card-body"id="important">
-                 <h5 id="zyzy"><strong>重要主页</strong></h5>
-                 <hr>
-                 <a href="https://my.monash.edu.au/" target="_blank"type="button"><el-button type="danger"data-toggle="popover" data-trigger="hover"data-placement="bottom" data-content="Mymonash学生登入界面，可转入moodle, timetable, email, library等。"plain>My Monash</el-button></a>
-                 <a href="https://monash.edu/" target="_blank"type="button"><el-button  type="primary" plain data-toggle="popover" data-trigger="hover"data-placement="bottom" data-content="Monash官网，可查询任何关于学校的信息，能找到最新推送的公告活动等。">Monash官网</el-button></a>
-                 <a href="https://my.monash.edu.au/wes/" target="_blank"type="button"><el-button type="primary" plain data-toggle="popover" data-trigger="hover"data-placement="bottom" data-content="Web enrolment system,用于注册学科，交学费，提交个人信息，延期等。">WES</el-button></a>
-                 <a href="https://www3.monash.edu/pubs/2019handbooks/index.html" target="_blank"type="button"><el-button type="primary" plain data-toggle="popover" data-trigger="hover"data-placement="bottom" data-content="Handbook,用于查看各科目详细内容，教授联系方式，分数线，学习内容等。">Handbook</el-button></a>
-                 <a href="https://www3.monash.edu/pubs/2019handbooks/maps/" target="_blank"type="button"><el-button type="primary" plain data-toggle="popover" data-trigger="hover"data-placement="bottom" data-content="Course map，用于查看专业内所有需要学的科目，此course map链接可能不包含所有专业，需在handbook内寻找。">Course map</el-button></a>
-                 <a href="https://www.monash.edu/engineering/current-students/enrolment-and-re-enrolment/course-information/course-maps" target="_blank"type="button"><el-button type="primary" plain data-toggle="popover" data-trigger="hover"data-placement="bottom" data-content="工程专业的Course map">工程Course map</el-button></a>
-                 <a href="https://monashuni.okta.com/" target="_blank"type="button"><el-button type="primary" plain data-toggle="popover" data-trigger="hover"data-placement="bottom" data-content="Okta登入界面，可用于更改登入密码和更改okta绑定设备。">Okta登入</el-button></a>
-                 <a href="https://www.monash.edu/connect/contact-us" target="_blank"type="button"><el-button type="primary" plain data-toggle="popover" data-trigger="hover"data-placement="bottom" data-content="有任何关于学习，生活，校内的任何问题都可以在这里寻求帮助。">MonashConnect</el-button></a>
-                 <a href="https://www.monash.edu/engineering/current-students/professional-development/continuous-professional-development" target="_blank"type="button"><el-button type="primary" plain data-toggle="popover" data-trigger="hover"data-placement="bottom" data-content="工程学生需要完成的CPD，有详细的介绍和解答。">工程CPD</el-button></a>
-                 <hr>
-                 <h5><strong>校内设施</strong></h5>
-                 <hr>
-                 <a href="https://www.monash.edu/esolutions/print/students" target="_blank" type="button"><el-button type="success" plain data-toggle="popover" data-trigger="hover"data-placement="bottom" data-content="校内打印机使用，上传打印文件。">校内打印</el-button></a>
-                 <a href="https://www.monash.edu/esolutions/accounts-passwords/credit-your-account" target="_blank" type="button"><el-button type="success" plain data-toggle="popover" data-trigger="hover"data-placement="bottom" data-content="学生卡充值，用于打印时扣费。">学生卡充值</el-button></a>
-                 <a href="https://www.monash.edu/esolutions/print/students-costs" target="_blank" type="button"><el-button  type="primary" plain data-toggle="popover" data-trigger="hover"data-placement="bottom" data-content="用于浏览不同种类的打印价格。">打印价格</el-button></a>
-                 <a href="https://locate-a-lab.apps.monash.edu/" target="_blank" type="button"><el-button type="success" plain data-toggle="popover" data-trigger="hover"data-placement="bottom" data-content="Computer lab的开放时间以及课后进入的权限申请。">计算机房</el-button></a>
-                 <a href="https://www.monash.edu/students/study-resources/study-spaces" target="_blank" type="button"><el-button  type="primary" plain data-toggle="popover" data-trigger="hover"data-placement="bottom" data-content="学习区域位置及开放时间查询。">学习区域</el-button></a>
-                 <a href="https://www.monash.edu/esolutions/software/catalogue" target="_blank" type="button"><el-button type="success" plain data-toggle="popover" data-trigger="hover"data-placement="bottom" data-content="学校提供的免费下载安装或在线使用需要付费的软件如Microsoft office，matlab等。">软件下载</el-button></a>
-                 <a href="https://www.monash.edu/accommodation/home" target="_blank" type="button"><el-button type="success" plain data-toggle="popover" data-trigger="hover"data-placement="bottom" data-content="可申请学校宿舍，并且有详细的价格和种类说明。">学校宿舍</el-button></a>
-               </div>
-               <div class="card-footer">注意：校园区内的链接在国内使用时加载缓慢，有需要的可挂VPN后浏览。</div><hr>
-               <div class="card-header"id="tool"><h4><strong>工具链接</strong></h4></div>
-               <div class="card-body">
-                 <h5 id="t1"><strong>写作工具</strong></h5>
-                 <hr>
-                 <a href="http://fanyi.youdao.com/" target="_blank" type="button"><el-button type="success" plain data-toggle="popover" data-trigger="hover"data-placement="bottom" data-content="翻译，需要时推荐点进有道词典更为精确。">有道翻译</el-button></a>
-                 <a href="https://translate.google.cn/" target="_blank" type="button"><el-button type="success" plain data-toggle="popover" data-trigger="hover"data-placement="bottom" data-content="国内可用的谷歌翻译。">谷歌翻译（CN）</el-button></a>
-                 <a href="https://translate.google.com/" target="_blank" type="button"><el-button type="success" plain data-toggle="popover" data-trigger="hover"data-placement="bottom" data-content="谷歌翻译,国内无法使用。">谷歌翻译</el-button></a>
-                 <a href="https://www.deepl.com/home" target="_blank" type="button"><el-badge value="new" class="item"><el-button type="success" plain data-toggle="popover" data-trigger="hover"data-placement="bottom" data-content="可自主选择词汇的翻译神器，能直接翻译word文件并用专业写作的词语替换。">Deepl</el-button></el-badge></a>
-                 <a href="https://www.grammarly.com/grammar-check" target="_blank" type="button"><el-button type="success" plain data-toggle="popover" data-trigger="hover"data-placement="bottom" data-content="用于检测拼写和语法等，可点击LOGO进入主页下载软件版，可在不同场合自动检查拼写和语法。">Grammarly</el-button></a>
-                 <a href="https://www.thesaurus.com/" target="_blank" type="button"><el-button type="success" plain data-toggle="popover" data-trigger="hover"data-placement="bottom" data-content="用于替换同义词，并能检查文章语法。">*Thesaraus</el-button></a>
-                 <a href="https://www.wordandphrase.info/" target="_blank" type="button"><el-button type="success" plain data-toggle="popover" data-trigger="hover"data-placement="bottom" data-content="可用来检测文章词汇和语句的学术性，也可查询单个单词在学术写作中使用的比例。">*wordandphrase</el-button></a>
-                 <a href="http://www.phrasebank.manchester.ac.uk/" target="_blank" type="button"><el-button type="success" plain data-toggle="popover" data-trigger="hover"data-placement="bottom" data-content="提供各种专业短语及句型用于替换，并且有相关写作教学。">*Acdemic phrasebank</el-button></a>
-                 <a href="http://uefap.net/" target="_blank" type="button"><el-button type="success" plain data-toggle="popover" data-trigger="hover"data-placement="bottom" data-content="很详细的专业写作教学，细分至各种文体，文章的各个部分，语法，修辞等。">*UEfAP</el-button></a>
-                 <a href="https://scholar.chongbuluo.com/" target="_blank" type="button"><el-button type="success" plain data-toggle="popover" data-trigger="hover"data-placement="bottom" data-content="集合了各大常用的文献搜索网址，可用来搜索文献、参考等。">*虫部落学术搜索</el-button></a>
-                 <a href="https://z-lib.org/" target="_blank" type="button"><el-button type="success" plain data-toggle="popover" data-trigger="hover"data-placement="bottom" data-content="庞大的电子书店，可查询书记或文章，常用于搜索文献。">*Z-library</el-button></a>
-                 <el-button class="forbit-btn"type="info" plain data-toggle="popover" data-trigger="hover"data-placement="bottom" data-content="上述所有链接均可在线使用但这些工具的能力有限，如需更好的写作辅助软件如stylewriter whitesmoke等需要下载软件。其次付费版的网址准确性也会更高如Scrivener，Grammarly付费
-                   版等如有需要可自行搜索使用。">更多</el-button>
-                 <hr>
-                 <h5><strong>理科工具</strong></h5>
-                 <hr>
-                 <a href="https://locate-a-lab.apps.monash.edu/" target="_blank" type="button"><el-button type="success" plain data-toggle="popover" data-trigger="hover"data-placement="bottom" data-content="功能超强大的知识搜索引擎兼计算器，可以用来解决复杂的问题，涵盖但不仅限于数学，物理，化学，科学，工程，商科，文学
-                   ， 生活。">*Wolframalpha智能计算器</el-button></a>
-                 <hr>
-
-                 <h5 id="t2"><strong>设计工具</strong></h5>
-                 <hr>
-                 <a href="https://www.gaoding.com/" target="_blank" type="button"><el-button type="success" plain data-toggle="popover" data-trigger="hover"data-placement="bottom" data-content="拥有海量精美模板与资源，部分资源需要付费或VIP，同时提供免费的在线photoshop和一件抠图功能。">稿定设计</el-button></a>
-                 <a href="https://www.chuangkit.com/" target="_blank" type="button"><el-button type="success" plain data-toggle="popover" data-trigger="hover"data-placement="bottom" data-content="极简的设计工具，并且有许多办公用的模板等资源和素材。">创客贴</el-button></a>
-                 <a href="https://www.processon.com/" target="_blank" type="button"><el-button type="success" plain data-toggle="popover" data-trigger="hover"data-placement="bottom" data-content="免费在线创作思维导图，流程图，并可进行背景透明保存。">ProcessOn在线绘图</el-button></a>
-                 <a href="https://hanabi.data-viz.cn/templates?lang=zh-CN" target="_blank" type="button"><el-button type="success" plain data-toggle="popover" data-trigger="hover"data-placement="bottom" data-content="制作动态图的工具，有动态条形图，柱状图，网格图等大量素材，全都以短视频的方式呈现。">火花hanabi</el-button></a>
-
-                 <a href="https://www.hellofont.cn/home" target="_blank" type="button"><el-button type="success" plain data-toggle="popover" data-trigger="hover"data-placement="bottom" data-content="拥有两千多款高品质字体，部分可免费商用。大多数功能需要下载客户端，在线使用效率较低。">字由</el-button></a>
-                 <a href="https://pixabay.com/" target="_blank" type="button"><el-button type="success" plain data-toggle="popover" data-trigger="hover"data-placement="bottom" data-content="拥有许多免费且可上映的高清图片资源库。">*Pixabay</el-button></a>
-                 
-                 <a href="https://www.iconfont.cn/" target="_blank" type="button"><el-badge value="new" class="item"><el-button type="success" plain data-toggle="popover" data-trigger="hover"data-placement="bottom" data-content="阿里巴巴矢量图标库，有许多免费的插画和图标资源，并且有SVG格式（矢量图标格式：更改图片尺寸不会影响图片效果。）">Iconfont</el-button></el-badge></a>
-                 <a href="https://www.doyoudo.com/" target="_blank" type="button"><el-button type="success" plain data-toggle="popover" data-trigger="hover"data-placement="bottom" data-content="拥有许多关于设计类的资源库以及教程，包含免费和付费板块。">Doyoudo</el-button></a>
-                 <a href="http://www.officeplus.cn/Template/Home.shtml" target="_blank" type="button"><el-button type="success" plain data-toggle="popover" data-trigger="hover"data-placement="bottom" data-content="微软旗下的office模板大全，涵盖word,ppt,excel并提供相关教学课程。">Officeplus</el-button></a>
-                 <el-button class="forbit-btn" type="info" plain data-toggle="popover" data-trigger="hover"data-placement="bottom" data-content="模板素材主要包括了PPT,Excel,Word等模板，同时也有很多可用于演讲，个人简历，海报，平面设计等，有需要的可自行浏览下载。">更多</el-button>
-                 <hr>
-                 <h5 id="bcgj"><strong>编程工具</strong></h5>
-                 <hr>
-                 <a href="https://github.com/" target="_blank" type="button"><el-button type="success" plain data-toggle="popover" data-trigger="hover"data-placement="bottom" data-content="世界最大的代码分享，项目开源平台，还可用于团队合作进行版本控制，搭建个人博客等。">Github</el-button></a>
-                 <a href="https://www.w3school.com.cn/index.html" target="_blank" type="button"><el-button type="success" plain data-toggle="popover" data-trigger="hover"data-placement="bottom" data-content="全球最大的中文web技术教程，包含web技术以及一些主流编程语言的教程。">w3school</el-button></a>
-                 <a href="https://www.runoob.com/" target="_blank" type="button"><el-button type="success" plain data-toggle="popover" data-trigger="hover"data-placement="bottom" data-content="提供许多编程语言的详细基础教程。">Runoob菜鸟教程</el-button></a>
-                 <a href="https://www.imooc.com/" target="_blank" type="button"><el-button type="success" plain data-toggle="popover" data-trigger="hover"data-placement="bottom" data-content="互联网IT技术学习平台，拥有许多大学提供的专业课程，分付费和免费区。">IMOOC慕课网</el-button></a>
-                 <a href="https://stackoverflow.com/" target="_blank" type="button"><el-button type="success" plain data-toggle="popover" data-trigger="hover"data-placement="bottom" data-content="IT问答网站，任何IT类的问题都能在这里搜索到答案，也可以发出提问等待着大佬上门解答。">stackoverflow</el-button></a>
-                 <a href="https://www.csdn.net/" target="_blank" type="button"><el-button type="success" plain data-toggle="popover" data-trigger="hover"data-placement="bottom" data-content="开发者社区、论坛。会有很多人在这里写一些心得和攻略，也可以找到一些问题的解决方案。但是内容较杂，准确率未知，需要辨别。">CSDN</el-button></a>
-                 <a href="https://www.nowcoder.com/" target="_blank" type="button"><el-button type="success" plain data-toggle="popover" data-trigger="hover"data-placement="bottom" data-content="收集了许多大厂的真题和编程训练，同时也有许多有用的教程，也可以在这里求职从而找到实习或就业机会。">牛客网</el-button></a>
-                 <a href="https://leetcode-cn.com/" target="_blank" type="button"><el-button type="success" plain data-toggle="popover" data-trigger="hover"data-placement="bottom" data-content="涵盖了许多算法测试题和面试真题，也可以找到许多相关教程。">leetcode力扣</el-button></a>
-
-                 <hr>
-                 <h5><strong>综合工具</strong></h5>
-                 <hr>
-                 <a href="https://convertio.co/" target="_blank" type="button"><el-button type="success" plain data-toggle="popover" data-trigger="hover"data-placement="bottom" data-content="超强大的在线格式转换工具，几乎涵盖所有类型格式。">Convertio</el-button></a>
-                 <a href="https://smallpdf.com/cn" target="_blank" type="button"><el-button type="success" plain data-toggle="popover" data-trigger="hover"data-placement="bottom" data-content="简洁实用的PDF格式转换器，也包括其它少许格式的转换。">Smallpdf</el-button></a>
-                 <a href="https://www.yxgapp.com/" target="_blank" type="button"><el-button type="success" plain data-toggle="popover" data-trigger="hover"data-placement="bottom" data-content="视频学习网站，保函ted talk，精品课，公开课等，拥有广泛的内容学习。">译学馆</el-button></a>
-                 <a href="https://www.tooleyes.com/" target="_blank" type="button"><el-button type="success" plain data-toggle="popover" data-trigger="hover"data-placement="bottom" data-content="超多工具可在线使用，如图片，视频，gif编辑，文件格式转换，公式计算，文件压缩，邮箱生成，编码工具等。">tooleyes在线工具大全</el-button></a>
-                 </div>
-                 <div class="card-footer">注意：所有工具类网址均是以免费为前提寻找并经过筛选后觉得相对好用的。</div>
-                 <hr>
-                 <div class="card-header"id="life"><h4><strong>生活链接</strong></h4></div>
-                 <div class="card-body">
-                 <br>
-                 <h5><strong>租房信息</strong></h5>
-                 <hr>
-                 <a href="https://www.monash.edu/accommodation/accommodation/off-campus-options/private-rental" target="_blank" type="button"><el-button  type="primary" plain data-toggle="popover" data-trigger="hover"data-placement="bottom" data-content="学校提供的可靠校外租房中介合集，可用于租校外的房子或公寓。">*学校认可的靠谱中介合集</el-button></a>
-                 <hr>
-                 <h5><strong>休闲娱乐</strong></h5>
-                 <a href="https://www.hi2future.com/" target="_blank" type="button"><el-button  type="primary" plain data-toggle="popover" data-trigger="hover"data-placement="bottom" data-content="可写一封邮件在未来发送给自己或朋友，生日或纪念日同样可用。">时光邮局</el-button></a>
-                 <a href="https://www.sq688.com/" target="_blank" type="button"><el-button  type="primary" plain data-toggle="popover" data-trigger="hover"data-placement="bottom" data-content="拥有海量无损音乐免费下载。">超高无损音乐</el-button></a>
-                 <a href="https://www.allhistory.com/" target="_blank" type="button"><el-button  type="primary" plain data-toggle="popover" data-trigger="hover"data-placement="bottom" data-content="含盖世界历史并以时间顺序排列，并且有关系导图可查看事件，人物的关联和成就等。">全历史</el-button></a>
-                 <a href="https://www.ageeye.cn/" target="_blank" type="button"><el-button  type="primary" plain data-toggle="popover" data-trigger="hover"data-placement="bottom" data-content="这里收藏了中国各朝各代的地图以及一些著名事迹的发展路线。">发现中国</el-button></a>
-                 <hr>
-               </div>
-             </div>
-           </div>
-       </div>
-     </div>
-   </div>
-  </div>
-   </div>
-       
-     <script>
-       let all = new Vue({
-         el:'#all',
-         data:{
-           check1:true,
-           check2:false,
-           isCollapse: true,
-           drawer: false,
-           drawer1: false,
-           reverse: true,
-        activities: [{
-          content: 'QA测试版上线',
-          timestamp: '2020-08-27'
-        }, {
-          content: 'QA正式版上线',
-          timestamp: '2020-09-01'
-        }, {
-          content: 'QA正式2.0版上线',
-          timestamp: '2020-09-12',
-          color: '#0bbd87'
-        }]
-         },
+    <div class="card" style="width: 100%;">
+      <div class="card-header">
+        <strong>货币</strong>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">金币 <input type="text" placeholder="输入数量" style="width:6rem" id="d1"> <button onclick="sub(1)">提交</button> </li> 
+        <li class="list-group-item">钻石 <input type="text" placeholder="输入数量" style="width:6rem" id="d2"> <button onclick="sub(2)">提交</button> </li>
+        <li class="list-group-item">电卷 <input type="text" placeholder="输入数量" style="width:6rem" id="d2"> <button onclick="sub(2)">提交</button> </li>
+      </ul>
+    </div>
+    <hr>
+    <div class="card" style="width: 100%;">
+      <div class="card-header">
+        <strong>属性</strong>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">生命 <input type="text" placeholder="输入数量" style="width:6rem" id="d3"> <button onclick="sub(3)">提交</button> </li>
+        <li class="list-group-item">魔法 <input type="text" placeholder="输入数量" style="width:6rem" id="d4"> <button onclick="sub(4)">提交</button> </li>
+        <li class="list-group-item">伤害 <input type="text" placeholder="输入数量" style="width:6rem" id="d5"> <button onclick="sub(5)">提交</button> </li>
+      </ul>
+    </div>
+    <hr>
+    <div class="card" style="width: 100%;">
+      <div class="card-header">
+        <strong>英雄</strong>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">
+          <select id="d6">
+            <option value="volvo">武则天</option>
+            <option value="saab">韩信</option>
+            <option value="opel">典韦</option>
+            <option value="audi">耀</option>
+            <option value="volvo">兰陵王</option>
+            <option value="saab">李白</option>
+            <option value="opel">达摩</option>
+            <option value="audi">小乔</option>
+            <option value="volvo">周瑜</option>
+            <option value="saab">诸葛亮</option>
+            <option value="opel">刘备</option>
+            <option value="audi">关羽</option>
+            <option value="opel">张飞</option>
+            <option value="audi">赵云</option>
+            <option value="opel">马超</option>
+            <option value="audi">狄仁杰</option>
+            <option value="audi">所有</option>
+          </select>
+          <button onclick="sub(6)">提交</button>
+        </li>
+        <form>
+          <li class="list-group-item"><input type="radio" name="sex" value="female">带皮肤</li>
+          </form>
+      </ul>
       
-         methods:{
-           submit1: function() {
-            window.open("http://www.baidu.com");
-            },
-            submit2: function() {
-                window.open("https://www.runoob.com/");
-            },
-            submit3: function() {
-                window.open("https://translate.google.cn/");
-            },
-            submit4: function() {
-                window.open("https://github.com/");
-            },
-            submit5: function() {
-                window.open("https://www.w3school.com.cn/index.html");
-            },
-            zyzy(){
-              window.location="#zyzy";
-            },
-            xzgj(){
-              window.location="#t1";
-            },
-            bcgj(){
-              window.location="#bcgj";
-            },
-            handleOpen(key, keyPath) {
-        console.log(key, keyPath);
-      },
-      handleClose(key, keyPath) {
-        console.log(key, keyPath);
-      },
-         },
-         created: function() {
-        var _this = this;
-        document.onkeydown = function(e) {
-            let key = window.event.keyCode;
-            if (key == 66) {
-                _this.submit1();
-            }
-            else if(key ==82){
-              _this.submit2();
-            }
-            else if(key ==70){
-              _this.submit3();
-            }
-            else if(key ==71){
-              _this.submit4();
-            }
-            else if(key ==87){
-              _this.submit5();
-            }
-        };
-    },
+    </div>
+
+    <hr>
+    <div class="card" style="width: 100%;">
+      <div class="card-header">
+        <strong>使用说明</strong>
+      </div>
+      <p>先登入当前手机的王者荣耀，并保持在后台运行，如需修改属性需要进入对局内。<br>回到本见面进行修改所需参数，点击提交，等待3秒左右会有提交反馈。<br>1为修改成功，0为修改失败，如无反应请稍后重试。
+      </p>
+      <br>
+    </div>
+    <div class="card bg-dark text-white">
+      <img src="https://img2.baidu.com/it/u=328657556,2564116882&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=281" class="card-img" alt="..." style="height:15rem">
+      <div class="card-img-overlay" id="anounce">
+        <h5 class="card-title">使用须知</h5>
+        <p class="card-text">当前版本属于免费的测试版本，仅供自己使用。<br>安全性极高，能保证不封号，但资源较少。<br><br>使用期间请保持本机的王者荣耀在后台运行。<br><br>请勿在未经允许
+        的情况下传播本程序，以免引起封杀和漏洞修复造成使用失败。</p>
+      </div>
+    </div>
     
-       })
-    $(document).ready(function(){
-        $('[data-toggle="popover"]').popover();
-    });
-    let time = new Date();
-    let mesnight = ["忙碌了一天，放松下吧。","今天的努力就是明天的底气。","任何值得而拥有的都是值得等待的。","拂尘晚归，得空闲坐。","今天离小目标又近了一步。","百草处黄消热暑，篱边瓜果缀枝头。","前路浩浩荡荡，万物皆可期待。","勤者读书夜达旦，青藤绕屋花连云。"];
-    let mesmor = ["又是元气满满的一天。","今天也要加油哦。","常应常静常清净矣。","听首音乐，读本好书。","小池残暑退，高树早凉归。","离离暑云散，习习凉风起。"];
-    let output="";
-    if(time.getHours()>=5 && time.getHours()<11){
-      let index = Math.floor(Math.random()*mesmor.length);
-       output = "早上好，" + mesmor[index]; 
+  </body>
+  <style>
+   
+  </style>
+  <script>
+    function char(){
+      window.open("https://www.alipay.com")
     }
-    else if(time.getHours()>=11 && time.getHours()<13){
-      let index = Math.floor(Math.random()*mesmor.length);
-       output = "中午好，" + mesmor[index];
+    function sub(b){
+      var k = document.getElementById("d"+b).value;
+      console.log(k == "")
+      if(k != "" && k != " "){
+        var a = Math.random()*10;
+        if(a<3){
+          setTimeout("alert('0')",3000);
+        }
+        else{
+          setTimeout("alert('1')",3000);
+        }
+      }
+      else{
+        alert("内容不得为空");
+      }
     }
-    else if(time.getHours()>=13 && time.getHours()<17){
-      let index = Math.floor(Math.random()*mesnight.length);
-      output = "下午好，" + mesnight[index];
-    }
-    else if(time.getHours()>=17 && time.getHours()<22){
-      let index = Math.floor(Math.random()*mesnight.length);
-      output = "晚上好，" + mesnight[index];
-      all.check1 = false;
-      all.check2 = true;
-    }
-    else{
-      output = "很晚了，要好好休息哦";
-      all.check1 = false;
-      all.check2 = true;
-    }
-    document.getElementById('mes').innerHTML=output;
   </script>
- </body>
 </html>
